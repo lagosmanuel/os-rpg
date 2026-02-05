@@ -1,35 +1,37 @@
-# Juego de Rol Colaborativo Multijugador
+# Multiplayer Collaborative Role-Playing Game
 
-Este proyecto es un juego de rol colaborativo multijugador diseñado como parte de un curso de **Sistemas Operativos** en la Universidad Nacional del Sur. En este, cada estudiante debió desarrollar su propio cliente para controlar a su jugador, mientras que el proceso servidor del "monstruo" sería manejado por el profesor. El objetivo fue aprender sobre sincronización entre procesos mediante el uso de memoria compartida y semáforos.
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
-## Descripción del Juego
+This project is a multiplayer collaborative role-playing game designed as part of an **Operating Systems** course at UNS. In this project, each student had to develop their own client to control their player, while the server process representing the "monster" was handled by the professor. The goal was to learn about process synchronization using shared memory and semaphores.
 
-El juego es un combate colaborativo por turnos basado en texto entre los jugadores y un monstruo. Los jugadores tienen la opción de elegir entre diferentes tipos de ataques (espada, maza, flecha) y deben gestionar su salud y energía para vencer al monstruo. La sincronización entre los clientes (jugadores) y el servidor (monstruo) se realiza mediante memoria compartida y semáforos.
+## Game Description
 
-### Características Principales
+The game is a text-based, turn-based collaborative combat between players and a monster. Players can choose between different types of attacks (sword, mace, arrow) and must manage their health and energy to defeat the monster. Synchronization between clients (players) and the server (monster) is achieved through shared memory and semaphores.
 
-- **Ataques**: El jugador puede atacar al monstruo con una espada, una maza o una flecha.
-- **Gestión de Recursos**: Salud y energía del jugador son gestionadas durante el juego.
-- **Sincronización**: Uso de semáforos y memoria compartida para coordinar el acceso a los recursos entre el jugador y el monstruo.
+### Key Features
 
-## Requisitos
+- **Attacks**: The player can attack the monster with a sword, a mace, or an arrow.
+- **Resource Management**: Player health and energy are managed during gameplay.
+- **Synchronization**: Use of semaphores and shared memory to coordinate resource access between the player and the monster.
 
-- **Sistema Operativo**: Compatible con sistemas basados en UNIX (Linux/MacOS).
-- **Compilador**: GCC (GNU Compiler Collection).
-- **CMake**: Para configurar el proyecto.
+## Requirements
 
-## Instalación
+- **Operating System**: Compatible with UNIX-based systems (Linux/macOS).
+- **Compiler**: GCC (GNU Compiler Collection).
+- **CMake**: To configure the project.
 
-1. **Clonar el Repositorio**
+## Installation
+
+1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/lagosmanuel/juego-rol-sistemas-operativos.git
-   cd juego-rol-sistemas-operativos
+   git clone https://github.com/lagosmanuel/os-rpg.git]
+   cd os-rpg
    ```
 
-2. **Configurar el Proyecto con CMake**
+2. **Configure the Project with CMake**
 
-   Crea un directorio de compilación y configura el proyecto:
+   Create a build directory and configure the project:
 
    ```bash
    mkdir build
@@ -37,78 +39,78 @@ El juego es un combate colaborativo por turnos basado en texto entre los jugador
    cmake ..
    ```
 
-3. **Compilar el Código**
+3. **Compile the Code**
 
-   Una vez configurado el proyecto con CMake, compila el código usando `make`:
+   Once configured with CMake, compile the code using `make`:
 
    ```bash
    make
    ```
 
-   Esto generará el ejecutable `juego-rol.bin` en el directorio principal del proyecto:
+   This will generate the executable `juego-rol.bin` in the project's main directory:
    
    ```bash
    cd ..
    ```
 
-## Ejecución
+## Execution
 
-1. **Iniciar el Servidor**
+1. **Start the Server**
 
-   El servidor representa al "monstruo" controlado por el profesor. Debe ser ejecutado primero:
+   The server represents the "monster" controlled by the professor. It must be executed first:
 
    ```bash
    ./server-local.bin
    ```
 
-2. **Iniciar el Cliente**
+2. **Start the Client**
 
-   Cada estudiante debe ejecutar su propio cliente para controlar a su jugador. Asegúrate de que el servidor esté en ejecución antes de iniciar el cliente:
+   Each student must run their own client to control their player. Ensure the server is running before starting the client:
 
    ```bash
    ./juego-rol.bin
    ```
 
-   Los clientes se conectarán al servidor y comenzarán la partida.
+   Clients will connect to the server, and the game will begin.
 
-## Uso
+## Usage
 
-- **Menú del Cliente**: Al ejecutar el cliente, se mostrará un menú con opciones para atacar al monstruo o salir del juego.
-- **Opciones**:
-  - `1`: Atacar con espada.
-  - `2`: Atacar con maza.
-  - `3`: Atacar con flecha.
-  - `4`: Salir del juego.
+- **Client Menu**: Upon running the client, a menu will appear with options to attack the monster or exit the game.
+- **Options**:
+  - `1`: Attack with sword.
+  - `2`: Attack with mace.
+  - `3`: Attack with arrow.
+  - `4`: Exit game.
 
-- **Mensajes**: Los mensajes sobre el estado del juego y los resultados de los ataques se mostrarán en la consola.
+- **Messages**: Messages regarding the game status and attack results will be displayed in the console.
 
-## Sincronización entre Procesos
+## Process Synchronization
 
-El juego utiliza semáforos y memoria compartida para sincronizar el acceso entre el cliente y el servidor. Aquí se usan:
+The game uses semaphores and shared memory to synchronize access between the client and the server. The following are used:
 
-- **Memoria Compartida**: Para almacenar el estado del juego, como la salud y la energía del jugador y el monstruo.
-- **Semáforos**: Para coordinar el acceso a la memoria compartida y evitar conflictos entre el cliente y el servidor.
+- **Shared Memory**: To store the game state, such as the health and energy of both the player and the monster.
+- **Semaphores**: To coordinate access to shared memory and avoid conflicts between the client and the server.
 
-## Capturas de Pantalla
+## Screenshots
 
-Aquí hay algunas capturas de pantalla del juego:
+Here are some screenshots of the game:
 
-1. **Menú Principal del Cliente**
-   ![Menú Principal del Cliente](screenshots/screenshot1.png)
+1. **Client Main Menu**
+   ![Client Main Menu](screenshots/screenshot1.png)
 
-2. **Menu Principal del Servidor**
-   ![Estado del Juego durante el Combate](screenshots/screenshot2.png)
+2. **Server Main Menu**
+   ![Game State During Combat](screenshots/screenshot2.png)
 
-3. **Pantalla de Victoria del Cliente**
-   ![Pantalla de Victoria](screenshots/screenshot3.png)
+3. **Client Victory Screen**
+   ![Victory Screen](screenshots/screenshot3.png)
 
-3. **Pantalla de Derrota del Cliente**
-   ![Pantalla de Derrota](screenshots/screenshot4.png)
+3. **Client Defeat Screen**
+   ![Defeat Screen](screenshots/screenshot4.png)
 
-## Contribuciones
+## Contributions
 
-Este proyecto es parte de un ejercicio académico, no obstante contribuciones adicionales son bienvenidas.
+This project is part of an academic exercise; however, additional contributions are welcome.
 
-## Licencia
+## License
 
-Este proyecto está licenciado bajo la [Licencia Pública General GNU (GPL)](https://www.gnu.org/licenses/gpl-3.0.html). Consulta el archivo [LICENSE](LICENSE) para obtener más detalles.
+This project is licensed under the [GNU General Public License (GPL)](https://www.gnu.org/licenses/gpl-3.0.html). See the [LICENSE](LICENSE) file for more details.
