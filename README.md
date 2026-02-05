@@ -25,7 +25,7 @@ The game is a text-based, turn-based collaborative combat between players and a 
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/lagosmanuel/os-rpg.git]
+   git clone https://github.com/lagosmanuel/os-rpg.git
    cd os-rpg
    ```
 
